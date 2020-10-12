@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fcd28714-9c32-4bc9-b7e5-ad505dc8403b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_articulos" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[50]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     empresa.`cifnif` AS empresa_cifnif,
+     empresa.`nombre` AS empresa_nombre,
+     empresa.`direccion` AS empresa_direccion,
+     empresa.`codpostal` AS empresa_codpostal,
+     empresa.`poblacion` AS empresa_poblacion,
+     empresa.`telefono` AS empresa_telefono,
+     empresa.`movil` AS empresa_movil,
+     empresa.`correo` AS empresa_correo,
+     empresa.`paginaweb` AS empresa_paginaweb,
+     empresa.`logotipo` AS empresa_logotipo,
+     articulos.`idarticulo` AS articulos_idarticulo,
+     articulos.`familia` AS articulos_familia,
+     articulos.`descripcion` AS articulos_descripcion,
+     articulos.`precio` AS articulos_precio,
+     articulos.`descuento` AS articulos_descuento,
+     articulos.`stock` AS articulos_stock,
+     familias.`idfamilia` AS familias_idfamilia,
+     familias.`nombre` AS familias_nombre,
+     familias.`iva` AS familias_iva,
+     familias.`imagen` AS familias_imagen
+FROM
+     `familias` familias INNER JOIN `articulos` articulos ON familias.`idfamilia` = articulos.`familia`,
+     `empresa` empresa]]>
+	</queryString>
+	<field name="empresa_cifnif" class="java.lang.String"/>
+	<field name="empresa_nombre" class="java.lang.String"/>
+	<field name="empresa_direccion" class="java.lang.String"/>
+	<field name="empresa_codpostal" class="java.lang.Integer"/>
+	<field name="empresa_poblacion" class="java.lang.String"/>
+	<field name="empresa_telefono" class="java.lang.String"/>
+	<field name="empresa_movil" class="java.lang.String"/>
+	<field name="empresa_correo" class="java.lang.String"/>
+	<field name="empresa_paginaweb" class="java.lang.String"/>
+	<field name="empresa_logotipo" class="java.lang.String"/>
+	<field name="articulos_idarticulo" class="java.lang.Integer"/>
+	<field name="articulos_familia" class="java.lang.Integer"/>
+	<field name="articulos_descripcion" class="java.lang.String"/>
+	<field name="articulos_precio" class="java.lang.Float"/>
+	<field name="articulos_descuento" class="java.lang.Integer"/>
+	<field name="articulos_stock" class="java.lang.Integer"/>
+	<field name="familias_idfamilia" class="java.lang.Integer"/>
+	<field name="familias_nombre" class="java.lang.String"/>
+	<field name="familias_iva" class="java.lang.String"/>
+	<field name="familias_imagen" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="428" y="16" width="100" height="20" uuid="88339c02-5c6d-4cc1-a6a4-db9edfa2b400"/>
+				<textFieldExpression><![CDATA[$F{empresa_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="36" width="100" height="20" uuid="4f82d0b6-8992-435a-8c1f-2566e41e8bbe"/>
+				<textFieldExpression><![CDATA[$F{empresa_telefono}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="39" y="7" width="214" height="29" uuid="c96885ed-4c93-44a8-b0d6-4739a1f7fba8"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Lista de artículos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="39" y="5" width="100" height="20" uuid="7724f473-ed00-498d-91f5-f8a4d702369b"/>
+				<text><![CDATA[ARTCÍCULO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="8" width="100" height="20" uuid="e4577ed9-812d-4ea8-9ef6-cd76a59ce914"/>
+				<text><![CDATA[DESCRIPCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="5" width="100" height="20" uuid="72efdfc6-5a84-479d-b775-c77ccc492d84"/>
+				<text><![CDATA[PRECIO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="39" y="0" width="100" height="20" uuid="0b79dfcc-e71f-4ed0-aaf3-896f40d47179"/>
+				<textFieldExpression><![CDATA[$F{articulos_idarticulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="100" height="20" uuid="01817148-3b87-4e92-8dfc-768c3f0fb326"/>
+				<textFieldExpression><![CDATA[$F{articulos_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="0" width="100" height="20" uuid="d6c962c8-39b3-4c1d-9816-7ddb2d329694"/>
+				<textFieldExpression><![CDATA[$F{articulos_precio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="2" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="493" y="21" width="50" height="20" uuid="b5007775-5e92-4f1f-a347-d19127874f6d"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch"/>
+	</summary>
+</jasperReport>
