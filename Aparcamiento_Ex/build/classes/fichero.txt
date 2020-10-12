@@ -1,0 +1,3 @@
+MATRICULA 	 TIPO 	 MARCA 	 MODELO 	 TIEMPO 	 PAGO MES
+5555-AAA 	 01 	 Seat 	 Leon 	 3 	 0.012 €
+8940-DXN 	 02 	 Skoda 	 Fabia 	 95 	 0.38 €

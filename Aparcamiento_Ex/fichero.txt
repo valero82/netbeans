@@ -1,0 +1,4 @@
+MATRICULA 	 TIPO 	 MARCA 	 MODELO 	 TIEMPO 	 PAGO MES 	
+2222-NBG 	 01 	 asdas 	 afasd 	 70 	 0.28 €
+4678-BVC 	 03 	 Fiat 	 SuperMiraFiori 	 60 	 0.24 €
+8940-DXN 	 03 	 Skoda 	 Fabia 	 60 	 0.24 €
